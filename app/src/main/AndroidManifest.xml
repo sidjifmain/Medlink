@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Medlink"
         tools:targetApi="31">
         <activity
+            android:name=".Body"
+            android:exported="false" />
+        <activity
+            android:name=".BodySelect"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

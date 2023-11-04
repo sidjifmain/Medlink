@@ -61,6 +61,7 @@
                     app:srcCompat="@drawable/simptops_img" />
 
                 <TextView
+                    android:id="@+id/sympthom_checker"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -89,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Symptom Checker"
+                    android:text="Drug reminder"
                     android:textColor="@color/text_color"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -114,37 +115,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Symptom Checker"
+                    android:text="Doctors"
                     android:textColor="@color/text_color"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:layout_marginLeft="10dp"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:layout_marginRight="10dp"-->
-<!--                android:background="@drawable/rectangle"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="horizontal">-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="100dp"-->
+            <!--                android:layout_marginLeft="10dp"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:layout_marginRight="10dp"-->
+            <!--                android:background="@drawable/rectangle"-->
+            <!--                android:gravity="center"-->
+            <!--                android:orientation="horizontal">-->
 
-<!--                <ImageView-->
-<!--                    android:layout_width="100dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    app:srcCompat="@drawable/meeting_img" />-->
+            <!--                <ImageView-->
+            <!--                    android:layout_width="100dp"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    app:srcCompat="@drawable/meeting_img" />-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/textView"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:text="Symptom Checker"-->
-<!--                    android:textColor="@color/text_color"-->
-<!--                    android:textSize="20sp"-->
-<!--                    android:textStyle="bold" />-->
-<!--            </LinearLayout>-->
+            <!--                <TextView-->
+            <!--                    android:id="@+id/textView"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:text="Symptom Checker"-->
+            <!--                    android:textColor="@color/text_color"-->
+            <!--                    android:textSize="20sp"-->
+            <!--                    android:textStyle="bold" />-->
+            <!--            </LinearLayout>-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -153,10 +154,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:text="Top News"
-                android:textSize="30sp"
                 android:textColor="@color/text_color"
-                android:textStyle="bold"
-                />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -177,26 +177,26 @@
                     android:orientation="vertical">
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="22dp"
-                    android:layout_weight="1"
-                    android:textSize="10sp"
-                    android:text="Improving Deep Sleep May Protect Against Dementia"
-                    android:textColor="@color/text_color"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="22dp"
+                        android:layout_weight="1"
+                        android:text="Improving Deep Sleep May Protect Against Dementia"
+                        android:textColor="@color/text_color"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
 
                     <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10sp"
-                    android:text="Study shows that even small decline in sound sleep may raise dementia risk.
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Study shows that even small decline in sound sleep may raise dementia risk.
                                 By Don Rauf November 7, 2023"
-                    android:textColor="@color/gray"
-                    android:textStyle="bold" />
+                        android:textColor="@color/gray"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -204,10 +204,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_marginBottom="30dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -243,13 +243,6 @@
 
                 </LinearLayout>
             </LinearLayout>
-
-
-
-
-
-
-
 
 
         </LinearLayout>
