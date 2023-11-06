@@ -32,6 +32,18 @@ class HomePage : AppCompatActivity() {
             val collectionReference = FirebaseFirestore.getInstance().collection("users")
             val documentReference = collectionReference.document(uuid)
 
+            if (user!!.email.toString() == "sidjifmain@gmail.com" ){
+                Log.d("salam","oldu")
+                binding.homePpPhoto.setImageResource(R.drawable.mehdi)
+            }
+            else if (user!!.email.toString() == "miryusifbabayev42@gmail.com" ){
+                Log.d("salam","oldu")
+                binding.homePpPhoto.setImageResource(R.drawable.miri)
+            }
+            else {
+                binding.homePpPhoto.setImageResource(R.drawable.pp)
+            }
+
             documentReference.get()
                 .addOnSuccessListener { documentSnapshot ->
                     if (documentSnapshot.exists()) {

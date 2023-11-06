@@ -36,10 +36,25 @@ class Doctors : AppCompatActivity() {
         adapter = DoctorAdapter(mList)
         binding.doctorRecylerView.adapter = adapter
 
-        addDataToList()
+        fetchDoctorDataFromFirestore(
+            onSuccess = { doctorDataList ->
+                mList.clear() // Önce mevcut verileri temizleyin
+                mList.addAll(doctorDataList) // Firestore'dan gelen verileri ekleyin
+                Log.d("sala",mList.size.toString())
+                adapter.notifyDataSetChanged() // RecyclerView'i güncelleyin
+            },
+            onFailure = { exception ->
+                Log.w("Firestore Error", "Error getting documents: $exception")
+            }
+        )
 
 
-//       Search view ucun deyisme dinleme
+
+
+
+
+
+
         binding.doctorSearcView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
@@ -97,7 +112,7 @@ class Doctors : AppCompatActivity() {
         }
     }
 
-    private fun addDataToList() {
+    private fun fetchDoctorDataFromFirestore(onSuccess: (List<DoctorData>) -> Unit, onFailure: (Exception) -> Unit) {
         val db = FirebaseFirestore.getInstance()
         val userList = mutableListOf<DoctorData>()
 
@@ -108,27 +123,16 @@ class Doctors : AppCompatActivity() {
                 for (document in documents) {
                     val name = document.getString("name")
                     val sahe = document.getString("sahe")
-                    Log.d("miribaba",name.toString())
-
 
                     if (name != null && sahe != null) {
                         userList.add(DoctorData(name.toString(), "Men yaxsi oglanam", logo = R.drawable.doctor, sahe = sahe.toString()))
                     }
                 }
-                Log.d("miribaba",userList[0].name)
-
-
-                mList.clear()
-                mList.addAll(userList)
-                Log.d("miribaba3",mList[0].name)
-
+                onSuccess(userList)
             }
             .addOnFailureListener { exception ->
-                Log.w("Firestore Error", "Error getting documents: $exception")
+                onFailure(exception)
             }
-
-
-        mList.add(DoctorData("salam", "Men yaxsi oglanam", logo = R.drawable.doctor, sahe="salam"))
     }
 
 
