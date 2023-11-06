@@ -9,6 +9,9 @@ import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.mcss.medlink.databinding.ActivityHomePageBinding
+import com.zegocloud.uikit.prebuilt.call.config.ZegoNotificationConfig
+import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationConfig
+import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationService
 
 class HomePage : AppCompatActivity() {
     lateinit var binding : ActivityHomePageBinding
@@ -31,6 +34,9 @@ class HomePage : AppCompatActivity() {
             val uuid = user.uid
             val collectionReference = FirebaseFirestore.getInstance().collection("users")
             val documentReference = collectionReference.document(uuid)
+
+            videoCallServices(user.email.toString())
+            Log.d("videoCallREgister","oldu")
 
             if (user!!.email.toString() == "sidjifmain@gmail.com" ){
                 Log.d("salam","oldu")
@@ -133,5 +139,30 @@ class HomePage : AppCompatActivity() {
 
 
 
+    }
+
+    private fun videoCallServices(userID: String) {
+        val appID: Long = 1473626691
+        val appSign = "4cabe97666845a863bea122df5fc88aac52301a3aa487f168ac9697e857725ec"
+        val application = application
+        val callInvitationConfig = ZegoUIKitPrebuiltCallInvitationConfig()
+        callInvitationConfig.notifyWhenAppRunningInBackgroundOrQuit = true
+        val notificationConfig = ZegoNotificationConfig()
+        notificationConfig.sound = "zego_uikit_sound_call"
+        notificationConfig.channelID = "CallInvitation"
+        notificationConfig.channelName = "CallInvitation"
+        ZegoUIKitPrebuiltCallInvitationService.init(
+            application,
+            appID,
+            appSign,
+            userID,
+            userID,
+            callInvitationConfig
+        )
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ZegoUIKitPrebuiltCallInvitationService.unInit()
     }
 }

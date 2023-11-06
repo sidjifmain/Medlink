@@ -1,6 +1,8 @@
 package com.mcss.medlink
 
+
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +20,7 @@ import com.mcss.medlink.dataClasses.DoctorData
 import com.mcss.medlink.databinding.ActivityDoctorsBinding
 import com.mcss.medlink.databinding.FilterWindowBinding
 import java.util.Locale
+import kotlin.math.log
 
 @Suppress("DEPRECATION")
 class Doctors : AppCompatActivity() {
@@ -30,6 +33,8 @@ class Doctors : AppCompatActivity() {
         binding = ActivityDoctorsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
 //      RecylerView ucun settingler
         binding.doctorRecylerView.setHasFixedSize(true)
         binding.doctorRecylerView.layoutManager = LinearLayoutManager(this)
@@ -38,10 +43,10 @@ class Doctors : AppCompatActivity() {
 
         fetchDoctorDataFromFirestore(
             onSuccess = { doctorDataList ->
-                mList.clear() // Önce mevcut verileri temizleyin
-                mList.addAll(doctorDataList) // Firestore'dan gelen verileri ekleyin
+                mList.clear()
+                mList.addAll(doctorDataList)
                 Log.d("sala",mList.size.toString())
-                adapter.notifyDataSetChanged() // RecyclerView'i güncelleyin
+                adapter.notifyDataSetChanged()
             },
             onFailure = { exception ->
                 Log.w("Firestore Error", "Error getting documents: $exception")
@@ -91,6 +96,8 @@ class Doctors : AppCompatActivity() {
 
 
 
+
+
     }
 
 
@@ -114,7 +121,7 @@ class Doctors : AppCompatActivity() {
 
     private fun fetchDoctorDataFromFirestore(onSuccess: (List<DoctorData>) -> Unit, onFailure: (Exception) -> Unit) {
         val db = FirebaseFirestore.getInstance()
-        val userList = mutableListOf<DoctorData>()
+        val doctorDataMap = HashMap<String, DoctorData>()
 
         db.collection("users")
             .whereEqualTo("doctor", "true")
@@ -123,17 +130,30 @@ class Doctors : AppCompatActivity() {
                 for (document in documents) {
                     val name = document.getString("name")
                     val sahe = document.getString("sahe")
+                    val email = document.getString("email")
 
-                    if (name != null && sahe != null) {
-                        userList.add(DoctorData(name.toString(), "Men yaxsi oglanam", logo = R.drawable.doctor, sahe = sahe.toString()))
+                    if (name != null && sahe != null && email != null) {
+                        val doctorData = when (email) {
+                            "miryusifbabayev42@gmail.com" -> DoctorData(name, "Men Miriyem", logo =  R.drawable.miri, sahe=sahe)
+                            "renabayramli@gmail.com" -> DoctorData(name, "Men Renayam", logo =R.drawable.rena,sahe =sahe)
+                            "serxan@gmail.com" -> DoctorData(name, "Men serxanam",logo =  R.drawable.serxan, sahe = sahe)
+                            else -> DoctorData(name, "Men yaxsi oglanam", logo = R.drawable.doctor,sahe =  sahe)
+                        }
+
+                        if (!doctorDataMap.containsKey(email)) {
+                            doctorDataMap[email] = doctorData
+                        }
                     }
                 }
+
+                val userList = doctorDataMap.values.toList()
                 onSuccess(userList)
             }
             .addOnFailureListener { exception ->
                 onFailure(exception)
             }
     }
+
 
 
     fun filterPopup(context: Context,) {

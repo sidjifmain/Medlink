@@ -64,7 +64,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/register_back_button"
+                android:id="@+id/playVideoBackButton"
                 android:layout_width="15dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="20dp"
