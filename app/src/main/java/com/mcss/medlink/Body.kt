@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import com.mcss.medlink.databinding.ActivityBodyBinding
 
+
+@Suppress("DEPRECATION")
 class Body : AppCompatActivity() {
     lateinit var binding : ActivityBodyBinding
     @SuppressLint("ResourceType")
@@ -14,8 +16,19 @@ class Body : AppCompatActivity() {
         binding = ActivityBodyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val intent = intent
 
+
+//        Back button
+        binding.bodyBackButton.setOnClickListener{
+            onBackPressed()
+        }
+
+
+
+
+//        Body partlarini put extra ile Body activitysine gonderme
+
+        val intent = intent
         val bodyPart = intent.getStringExtra("body_part")
 
         when (bodyPart) {
