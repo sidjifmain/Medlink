@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
 import com.mcss.medlink.databinding.ActivityMeetingsBinding
 import com.mcss.medlink.databinding.ActivityVideoCallBinding
 import com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
@@ -25,6 +27,21 @@ class VideoCall : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityVideoCallBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        var targetUser = ""
+        val user = FirebaseAuth.getInstance().currentUser
+
+        if (user != null) {
+
+
+            if(user.email.toString() == "miryusifbabayev42@gmail.com"){
+                targetUser = "sidjifmain@gmail.com"
+            }
+            else if(user.email.toString() == "sidjifmain@gmail.com"){
+                targetUser = "miryusifbabayev42@gmail.com"
+            }
+
+        }
 
 
         receiverUserId = findViewById(R.id.receiver_user_id_text_field)
@@ -53,7 +70,7 @@ class VideoCall : AppCompatActivity() {
             }
         })
 
-        receiverUserId.setText("miryusifbabayev42@gmail.com")
+        receiverUserId.setText(targetUser)
         receiverUserId.postDelayed({
             if (receiverUserId.text.isNotEmpty()) {
 //                buttonLayout.visibility = View.VISIBLE

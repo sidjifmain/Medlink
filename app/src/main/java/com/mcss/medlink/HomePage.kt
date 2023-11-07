@@ -91,6 +91,8 @@ class HomePage : AppCompatActivity() {
             startActivity(Intent(this@HomePage , Doctors::class.java))
         }
 
+
+
         binding.homePpPhoto.setOnClickListener{
             val user = FirebaseAuth.getInstance().currentUser
 
