@@ -1,6 +1,7 @@
 package com.mcss.medlink
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,10 @@ class HomePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
+
 
 //        Firebase Referanslari
 
@@ -102,6 +107,11 @@ class HomePage : AppCompatActivity() {
 
         binding.drugReminder.setOnClickListener{
             startActivity(Intent(this@HomePage , DrugReminder::class.java))
+
+        }
+
+        binding.meetings.setOnClickListener{
+            startActivity(Intent(this@HomePage , Meetings::class.java))
 
         }
 

@@ -94,15 +94,12 @@ class MyProfile : AppCompatActivity() {
 
                 else ->{
 
-
-
                 }
-
             }
-
             true
-
         }
+
+
 
 
     }

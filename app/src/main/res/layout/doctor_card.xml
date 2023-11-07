@@ -36,13 +36,14 @@
             android:text="Jorem ipsum dolor, consectetur adipiscing elit. Nunc v libero et velit interdum, ac  mattis."
             android:textColor="@color/black" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/bookButton"
-            android:layout_width="80dp"
-            android:layout_height="30dp"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textSize="12dp"
             android:background="@drawable/rectangle_blue"
-            android:text="Book"
+            android:text="Appointment"
             android:textColor="@color/white" />
 
         <LinearLayout

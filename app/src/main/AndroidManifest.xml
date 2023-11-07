@@ -13,6 +13,27 @@
         android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".Xestelik"
+            android:exported="false" />
+        <activity
+            android:name=".Xestelikler"
+            android:exported="false" />
+        <activity
+            android:name=".Qarin"
+            android:exported="false" />
+        <activity
+            android:name=".SymptomCheck"
+            android:exported="false" />
+        <activity
+            android:name=".SymptomsSelection"
+            android:exported="false" />
+        <activity
+            android:name=".RandevuAl"
+            android:exported="false" />
+        <activity
+            android:name=".VideoCall"
+            android:exported="false" />
+        <activity
             android:name=".PlayVideo"
             android:exported="false" />
         <activity

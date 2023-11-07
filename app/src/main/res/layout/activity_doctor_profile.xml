@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".DoctorProfile">
 
+
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/home/murad/Desktop/play_button.png" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar4"
         android:layout_width="match_parent"
@@ -56,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar4">
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/doctorProfileImage"
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:src="@drawable/doctor" />
@@ -67,7 +75,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/doctorProfileName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -76,7 +84,7 @@
                 android:textSize="25dp" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/doctorProfileWork"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -85,7 +93,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/doctorProfileLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -104,7 +112,7 @@
                 android:layout_marginStart="5dp" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/doctorProfileSahe"
                 android:layout_width="80dp"
                 android:layout_height="20dp"
                 android:layout_margin="5dp"
@@ -134,11 +142,11 @@
         android:textColor="@color/text_color"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintBottom_toTopOf="@+id/doctorProfileMelumat"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/doctorProfileMelumat"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_marginStart="24dp"
@@ -152,7 +160,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/doctorProfileThumbnail"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginStart="24dp"
@@ -160,29 +168,30 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/doctorProfileMelumat"
         app:srcCompat="@drawable/rena" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/videos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="8dp"
-        android:text="Detailes"
+        android:text="Videos"
         android:textColor="@color/text_color"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView15"
+        app:layout_constraintBottom_toTopOf="@+id/doctorProfileThumbnail"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/play_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
-        app:layout_constraintEnd_toEndOf="@+id/imageView15"
-        app:layout_constraintStart_toStartOf="@+id/imageView15"
-        app:layout_constraintTop_toTopOf="@+id/imageView15"
-        app:srcCompat="@drawable/play_button" />
+        android:id="@+id/playButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/play_button"
+        app:layout_constraintBottom_toBottomOf="@+id/doctorProfileThumbnail"
+        app:layout_constraintEnd_toEndOf="@+id/doctorProfileThumbnail"
+        app:layout_constraintStart_toStartOf="@+id/doctorProfileThumbnail"
+        app:layout_constraintTop_toTopOf="@+id/doctorProfileThumbnail" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

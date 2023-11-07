@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,116 +9,111 @@
     android:orientation="vertical"
     tools:context=".Meetings">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar7"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="60dp"
+        android:background="@color/primary_color"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/user_id_text_view"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:text="Hi User Id!"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Let's start a Video/\nAudio Call"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
-
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:text="To start a video/audio call please enter the user ID of whom you want to call and select the option of video/audio call."
-            android:textColor="@color/black"/>
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="100dp"
-        android:elevation="10dp"
-        android:gravity="center_vertical"
-        app:cardBackgroundColor="#DCF0FA"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="1dp">
-
-        <EditText
-            android:id="@+id/receiver_user_id_text_field"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginVertical="7dp"
-            android:hint="User ID"
-            android:singleLine="true"
-            android:textColor="@color/black"
-            android:textColorHint="#504F4F"
-            android:textSize="16sp" />
+            android:layout_height="match_parent">
 
-    </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/playVideoBackButton"
+                android:layout_width="15dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/back_button"
+                android:src="@drawable/back_button" />
 
-    <LinearLayout
-        android:id="@+id/buttons_layout"
-        android:paddingVertical="5dp"
-        android:layout_marginBottom="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="My Meetings"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        android:visibility="invisible">
-
-        <androidx.cardview.widget.CardView
-            android:layout_marginEnd="15dp"
-            android:id="@+id/button_video"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            app:cardCornerRadius="35dp"
-            app:cardBackgroundColor="#1AA8FF">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-                <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
-                    android:id="@+id/video_call_btn"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="#1AA8FF"/>
-            </LinearLayout>
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar7"
+        app:srcCompat="@drawable/rectangle4" />d
 
 
-        </androidx.cardview.widget.CardView>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/miri"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView19"
+        app:layout_constraintTop_toTopOf="@+id/imageView19" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginStart="15dp"
-            android:id="@+id/button_audio"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            app:cardBackgroundColor="#1AA8FF"
-            app:cardCornerRadius="35dp">
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Dr.Miryusif Babayev"
+        app:layout_constraintBottom_toBottomOf="@+id/circleImageView2"
+        app:layout_constraintStart_toEndOf="@+id/circleImageView2"
+        app:layout_constraintTop_toTopOf="@+id/circleImageView2" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+        app:layout_constraintStart_toStartOf="@+id/imageView19"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:srcCompat="@drawable/time" />
 
-                <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
-                    android:id="@+id/audio_call_btn"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="now"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView20"
+        app:layout_constraintStart_toEndOf="@+id/imageView20"
+        app:layout_constraintTop_toTopOf="@+id/imageView20"
+        app:layout_constraintVertical_bias="0.0" />
 
-</LinearLayout>
+    <android.widget.Button
+        android:id="@+id/meetButton"
+        android:layout_width="73dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rectangle_blue"
+        android:text="Meet"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+        app:layout_constraintEnd_toEndOf="@+id/imageView19"
+        app:layout_constraintTop_toTopOf="@+id/imageView19" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

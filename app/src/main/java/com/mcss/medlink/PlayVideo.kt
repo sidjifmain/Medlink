@@ -3,6 +3,7 @@ package com.mcss.medlink
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.VideoView
 import com.mcss.medlink.databinding.ActivityDoctorsBinding
@@ -15,8 +16,49 @@ class PlayVideo : AppCompatActivity() {
         binding = ActivityPlayVideoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val videoPath = "android.resource://${packageName}/${R.raw.rena_tanitim}"
-        val videoUri = Uri.parse(videoPath)
+        val doctorname = intent.getStringExtra("doctorName")
+        val apendesit = intent.getStringExtra("apendesit")
+        val xesteVideo = intent.getStringExtra("xestevideo")
+
+
+
+
+        binding.playVideoName.text = "Dr.${doctorname.toString()}"
+        binding.circleImageView.setImageResource(R.drawable.miri)
+
+        var videoPath = "android.resource://${packageName}/${R.raw.miri_tanitim}"
+        var videoUri = Uri.parse(videoPath)
+
+        if (xesteVideo.toString() == "true"){
+            videoPath = "android.resource://${packageName}/${R.raw.qarinagrisi}"
+            binding.circleImageView.setImageResource(R.drawable.rena)
+            binding.playVideoName.text = "Dr.Rean Bayramli"
+            videoUri = Uri.parse(videoPath)
+
+        }
+
+
+
+        if (apendesit.toString() == "true"){
+            videoPath = "android.resource://${packageName}/${R.raw.rena_tanitim}"
+            binding.circleImageView.setImageResource(R.drawable.rena)
+            binding.playVideoName.text = "Dr.${doctorname.toString()}"
+            videoUri = Uri.parse(videoPath)
+
+        }
+
+        if (doctorname.toString() == "Rena"){
+             videoPath = "android.resource://${packageName}/${R.raw.rena_tanitim}"
+            binding.circleImageView.setImageResource(R.drawable.rena)
+            binding.playVideoName.text = "Dr.${doctorname.toString()}"
+            videoUri = Uri.parse(videoPath)
+
+        }
+
+        
+
+
+
 
         binding.videoView.setVideoURI(videoUri)
         binding.videoView.start()

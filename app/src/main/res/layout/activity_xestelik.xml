@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qarin_xestelik"
+    tools:context=".Xestelik">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar13"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/primary_color"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/playVideoBackButton"
+                android:layout_width="15dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/back_button"
+                android:src="@drawable/back_button" />
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Acute appendicitis"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/xestelikVideo"
+        android:layout_width="353dp"
+        android:layout_height="210dp"
+        android:layout_marginBottom="224dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/rena_thumbnail" />
+
+    <ImageView
+        android:id="@+id/xestelikPlayButton"
+        android:layout_width="89dp"
+        android:layout_height="88dp"
+        app:layout_constraintBottom_toBottomOf="@+id/xestelikVideo"
+        app:layout_constraintEnd_toEndOf="@+id/xestelikVideo"
+        app:layout_constraintStart_toStartOf="@+id/xestelikVideo"
+        app:layout_constraintTop_toTopOf="@+id/xestelikVideo"
+        app:srcCompat="@drawable/play_button" />
+
+    <android.widget.Button
+        android:id="@+id/xestelikprofile"
+        android:layout_width="360dp"
+        android:layout_height="149dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="26dp"
+        android:background="@color/transparant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

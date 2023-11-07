@@ -1,6 +1,7 @@
 package com.mcss.medlink
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,8 +25,6 @@ class Body : AppCompatActivity() {
         }
 
 
-
-
 //        Body partlarini put extra ile Body activitysine gonderme
 
         val intent = intent
@@ -47,6 +46,11 @@ class Body : AppCompatActivity() {
             else -> {
 
             }
+        }
+
+
+        binding.qarin.setOnClickListener{
+            startActivity(Intent(this@Body , Qarin::class.java))
         }
 
 

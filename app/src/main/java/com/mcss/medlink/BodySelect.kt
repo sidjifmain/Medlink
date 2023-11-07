@@ -19,23 +19,23 @@ class BodySelect : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.backBody.setOnClickListener {
-            val intent = Intent(this@BodySelect, Body::class.java)
-            intent.putExtra("body_part", "back")
-            startActivity(intent)
-        }
-
-        binding.leftBody.setOnClickListener {
-            val intent = Intent(this@BodySelect, Body::class.java)
-            intent.putExtra("body_part", "left")
-            startActivity(intent)
-        }
-
-        binding.rightBody.setOnClickListener {
-            val intent = Intent(this@BodySelect, Body::class.java)
-            intent.putExtra("body_part", "right")
-            startActivity(intent)
-        }
+//        binding.backBody.setOnClickListener {
+//            val intent = Intent(this@BodySelect, Body::class.java)
+//            intent.putExtra("body_part", "back")
+//            startActivity(intent)
+//        }
+//
+//        binding.leftBody.setOnClickListener {
+//            val intent = Intent(this@BodySelect, Body::class.java)
+//            intent.putExtra("body_part", "left")
+//            startActivity(intent)
+//        }
+//
+//        binding.rightBody.setOnClickListener {
+//            val intent = Intent(this@BodySelect, Body::class.java)
+//            intent.putExtra("body_part", "right")
+//            startActivity(intent)
+//        }
 
     }
 }
